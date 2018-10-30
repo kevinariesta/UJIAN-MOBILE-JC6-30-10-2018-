@@ -21,6 +21,7 @@ class Home extends Component {
             headerContentStyle, 
             headerTextStyle, 
             imageStyle,
+            userStyle
         } = styles;
 
         return (this.props.posts.reverse()).map((item, index) => {
@@ -38,7 +39,8 @@ class Home extends Component {
                         <Image style={imageStyle} source={{ uri: item.imageurl }} />
                     </CardSection>
                     <CardSection>
-                        <Text>{item.email} {item.caption}</Text>
+                        <Text style={userStyle}>{item.email}</Text>
+                        <Text>{item.caption}</Text>
                     </CardSection>
                 </Card>
             );
@@ -58,24 +60,29 @@ class Home extends Component {
 
 const styles = {
     thumbnailStyle: {
-      height: 50,
-      width: 50,
+        height: 50,
+        width: 50,
     },
     headerContentStyle: {
-      justifyContent: 'space-around'
+        justifyContent: 'space-around'
     },
     headerTextStyle: {
-      fontSize: 15
+        fontSize: 18
     },
     thumbnailContainerStyle: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginLeft: 10,
-      marginRight: 10
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 10,
+        marginRight: 10
     },
     imageStyle: {
-      height: 300,
-      width: '100%'
+        height: 300,
+        width: '100%'
+    },
+    userStyle: {
+        marginRight: 20,
+        fontWeight: 'bold',
+        fontSize: 14
     }
   };
 

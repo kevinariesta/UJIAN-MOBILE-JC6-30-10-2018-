@@ -10,12 +10,6 @@ export const postUpdate = (prop, value) => {
     };
 };
 
-export const clearPostForm = () => {
-    return {
-        type: POST_CREATE
-    };
-};
-
 export const postCreate = (caption, imageurl) => {
     const email = firebase.auth().currentUser.email;
 
