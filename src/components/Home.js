@@ -20,27 +20,25 @@ class Home extends Component {
             thumbnailContainerStyle, 
             headerContentStyle, 
             headerTextStyle, 
-            imageStyle
+            imageStyle,
         } = styles;
 
-        return (this.props.posts.reverse()).map((data, key) => {
+        return (this.props.posts.reverse()).map((item, index) => {
             return (
-                <Card key={key}>
+                <Card key={index}>
                     <CardSection>
                     <View style={thumbnailContainerStyle}>
-                        <Image style={thumbnailStyle} source={{ uri: data.imageurl }} />
+                        <Image style={thumbnailStyle} source={{ uri: item.imageurl }} />
                     </View>
                     <View style={headerContentStyle}>
-                        <Text style={headerTextStyle}>{data.email}</Text>
+                        <Text style={headerTextStyle}>{item.email}</Text>
                     </View>
                     </CardSection>
                     <CardSection>
-                        <Image style={imageStyle} source={{ uri: data.imageurl }} />
+                        <Image style={imageStyle} source={{ uri: item.imageurl }} />
                     </CardSection>
                     <CardSection>
-                    <Text>
-                        {data.caption}
-                    </Text>
+                        <Text>{item.email} {item.caption}</Text>
                     </CardSection>
                 </Card>
             );
@@ -67,7 +65,7 @@ const styles = {
       justifyContent: 'space-around'
     },
     headerTextStyle: {
-      fontSize: 18
+      fontSize: 15
     },
     thumbnailContainerStyle: {
       justifyContent: 'center',
