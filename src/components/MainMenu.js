@@ -27,7 +27,7 @@ export default createBottomTabNavigator(
                         size={26}
                         style={{ color: tintColor }} 
                     />
-                  )
+                )
             }
         }
     },
